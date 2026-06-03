@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, Inter } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import { Header, Footer } from '@/components/layout';
 
@@ -42,6 +43,18 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-0XH1EJ2VNF"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0XH1EJ2VNF');
+          `}
+        </Script>
       </body>
     </html>
   );
