@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* ─── Brand colour tokens ──────────────────────────────────────────────────── */
+@theme {
+  /* Deep forest teal */
+  --color-brand-50:  #f0f7f6;
+  --color-brand-100: #d5ebe9;
+  --color-brand-200: #a8d4d0;
+  --color-brand-300: #6fbdb7;
+  --color-brand-400: #3ea09a;
+  --color-brand-500: #1e8a83;
+  --color-brand-600: #166e69;
+  --color-brand-700: #125858;
+  --color-brand-800: #0e4545;
+  --color-brand-900: #083333;
+  --color-brand-950: #041a1a;
+
+  /* Warm gold accent */
+  --color-gold-300: #e8c88a;
+  --color-gold-400: #d4a853;
+  --color-gold-500: #c4963a;
+  --color-gold-600: #a67d28;
+
+  /* Warm cream */
+  --color-cream:      #faf8f4;
+  --color-cream-dark: #f2ede4;
+}
+
+/* ─── Font tokens (reference Next.js CSS variables) ────────────────────────── */
+@theme inline {
+  --font-display: var(--font-cormorant);
+  --font-sans:    var(--font-inter);
+}
+
+/* ─── Base ─────────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-brand-900);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure focus rings are always visible — WCAG AA */
+:focus-visible {
+  outline-offset: 2px;
+}

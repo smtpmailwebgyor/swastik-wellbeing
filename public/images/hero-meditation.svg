@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#041a1a"/>
+      <stop offset="50%" stop-color="#083333"/>
+      <stop offset="100%" stop-color="#0e4545"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="25%" cy="25%" r="55%">
+      <stop offset="0%" stop-color="#c4963a" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#041a1a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="80%" cy="75%" r="45%">
+      <stop offset="0%" stop-color="#3ea09a" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#041a1a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow3" cx="50%" cy="50%" r="35%">
+      <stop offset="0%" stop-color="#125858" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#041a1a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow1)"/>
+  <rect width="1600" height="900" fill="url(#glow2)"/>
+  <rect width="1600" height="900" fill="url(#glow3)"/>
+  <!-- Concentric circles — lotus / mandala motif -->
+  <circle cx="800" cy="460" r="80"  fill="none" stroke="#d4a853" stroke-opacity="0.35" stroke-width="1"/>
+  <circle cx="800" cy="460" r="160" fill="none" stroke="#d4a853" stroke-opacity="0.22" stroke-width="0.8"/>
+  <circle cx="800" cy="460" r="260" fill="none" stroke="#d4a853" stroke-opacity="0.14" stroke-width="0.6"/>
+  <circle cx="800" cy="460" r="380" fill="none" stroke="#3ea09a" stroke-opacity="0.12" stroke-width="0.5"/>
+  <circle cx="800" cy="460" r="520" fill="none" stroke="#3ea09a" stroke-opacity="0.07" stroke-width="0.4"/>
+  <!-- Horizon glow -->
+  <ellipse cx="800" cy="900" rx="700" ry="220" fill="#d4a853" fill-opacity="0.08"/>
+  <!-- Fine grain texture lines -->
+  <line x1="0" y1="300" x2="1600" y2="300" stroke="#ffffff" stroke-opacity="0.02" stroke-width="1"/>
+  <line x1="0" y1="600" x2="1600" y2="600" stroke="#ffffff" stroke-opacity="0.02" stroke-width="1"/>
+</svg>

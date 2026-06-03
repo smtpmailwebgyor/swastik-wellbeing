@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#083333"/>
+      <stop offset="100%" stop-color="#125858"/>
+    </linearGradient>
+    <radialGradient id="g1" cx="70%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#d4a853" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#083333" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="20%" cy="80%" r="45%">
+      <stop offset="0%" stop-color="#1e8a83" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#083333" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect width="1200" height="800" fill="url(#g1)"/>
+  <rect width="1200" height="800" fill="url(#g2)"/>
+  <!-- Leaf / organic shapes -->
+  <ellipse cx="900" cy="200" rx="180" ry="80" fill="#1e8a83" fill-opacity="0.12" transform="rotate(-30 900 200)"/>
+  <ellipse cx="300" cy="600" rx="160" ry="70" fill="#d4a853" fill-opacity="0.1" transform="rotate(20 300 600)"/>
+  <!-- Circle accent -->
+  <circle cx="600" cy="400" r="220" fill="none" stroke="#d4a853" stroke-opacity="0.18" stroke-width="1"/>
+  <circle cx="600" cy="400" r="320" fill="none" stroke="#3ea09a" stroke-opacity="0.1" stroke-width="0.7"/>
+  <!-- Dot pattern -->
+  <circle cx="200" cy="200" r="2" fill="#d4a853" fill-opacity="0.3"/>
+  <circle cx="220" cy="200" r="2" fill="#d4a853" fill-opacity="0.2"/>
+  <circle cx="240" cy="200" r="2" fill="#d4a853" fill-opacity="0.15"/>
+  <circle cx="1000" cy="600" r="2" fill="#3ea09a" fill-opacity="0.3"/>
+  <circle cx="1020" cy="600" r="2" fill="#3ea09a" fill-opacity="0.2"/>
+</svg>
