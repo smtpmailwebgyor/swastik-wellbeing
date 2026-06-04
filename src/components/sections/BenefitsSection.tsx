@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { AnimateIn } from '@/components/ui/AnimateIn';
+import { AnimateIn, StaggerIn, StaggerChild } from '@/components/ui/AnimateIn';
 import type { Benefit, ProgramData } from '@/types';
 
 interface BenefitsSectionProps {
@@ -12,8 +12,12 @@ interface BenefitsSectionProps {
 function BenefitCard({ item }: { item: Benefit }) {
   return (
     <motion.div
-      className="group rounded-sm border border-white/10 bg-white/[0.07] p-8 shadow-lg backdrop-blur-md"
-      whileHover={{ y: -6, borderColor: 'rgba(196,150,58,0.35)', backgroundColor: 'rgba(255,255,255,0.12)' }}
+      className="group h-full rounded-sm border border-white/10 bg-white/[0.07] p-8 shadow-lg backdrop-blur-md"
+      whileHover={{
+        y: -6,
+        borderColor: 'rgba(196,150,58,0.35)',
+        backgroundColor: 'rgba(255,255,255,0.12)',
+      }}
       transition={{ duration: 0.25, ease: 'easeOut' }}
     >
       <div
@@ -52,18 +56,16 @@ export function BenefitsSection({ data }: BenefitsSectionProps) {
           />
         </AnimateIn>
 
-        <ul
+        <StaggerIn
+          staggerDelay={0.1}
           className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-          aria-label="Programme benefits"
         >
-          {data.items.map((item, index) => (
-            <li key={item.id}>
-              <AnimateIn delay={index * 0.08}>
-                <BenefitCard item={item} />
-              </AnimateIn>
-            </li>
+          {data.items.map((item) => (
+            <StaggerChild key={item.id}>
+              <BenefitCard item={item} />
+            </StaggerChild>
           ))}
-        </ul>
+        </StaggerIn>
       </div>
     </section>
   );

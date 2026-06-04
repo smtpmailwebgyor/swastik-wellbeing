@@ -3,6 +3,8 @@ export { BenefitsSection } from './BenefitsSection';
 export { ProgramExperienceSection } from './ProgramExperienceSection';
 export { TestimonialsSection } from './TestimonialsSection';
 export { TrustSection } from './TrustSection';
+export { SpacesShowcaseSection } from './SpacesShowcaseSection';
+export { AssociationsSection } from './AssociationsSection';
 export { FaqSection } from './FaqSection';
 export { LeadFormSection } from './LeadFormSection';
 export { CtaSection } from './CtaSection';

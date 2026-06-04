@@ -32,6 +32,22 @@
   --font-sans:    var(--font-inter);
 }
 
+/* ─── Animations ───────────────────────────────────────────────────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@theme inline {
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-float:   float 3.5s ease-in-out infinite;
+}
+
 /* ─── Base ─────────────────────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;

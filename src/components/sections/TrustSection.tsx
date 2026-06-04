@@ -1,4 +1,4 @@
-import { AnimateIn } from '@/components/ui/AnimateIn';
+import { AnimateIn, StaggerIn, StaggerChild } from '@/components/ui/AnimateIn';
 
 const trustPillars = [
   {
@@ -41,7 +41,6 @@ export function TrustSection() {
             >
               Why Clients Choose Us
             </p>
-            {/* Decorative line */}
             <div
               className="mx-auto flex items-center justify-center gap-3"
               aria-hidden="true"
@@ -53,31 +52,29 @@ export function TrustSection() {
           </div>
         </AnimateIn>
 
-        <ul
+        <StaggerIn
+          staggerDelay={0.12}
           className="grid gap-6 sm:grid-cols-3"
-          aria-label="Why clients trust us"
         >
-          {trustPillars.map((pillar, index) => (
-            <li key={pillar.id}>
-              <AnimateIn delay={index * 0.1}>
-                <div className="h-full rounded-sm border border-brand-100 bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-md">
-                  <div
-                    aria-hidden="true"
-                    className="mb-4 flex h-10 w-10 items-center justify-center rounded-sm bg-brand-50 text-gold-500"
-                  >
-                    <span className="text-xl leading-none">{pillar.icon}</span>
-                  </div>
-                  <h3 className="mb-3 font-display text-xl text-brand-900">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-brand-600">
-                    {pillar.body}
-                  </p>
+          {trustPillars.map((pillar) => (
+            <StaggerChild key={pillar.id}>
+              <div className="h-full rounded-sm border border-brand-100 bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-md">
+                <div
+                  aria-hidden="true"
+                  className="mb-4 flex h-10 w-10 items-center justify-center rounded-sm bg-brand-50 text-gold-500"
+                >
+                  <span className="text-xl leading-none">{pillar.icon}</span>
                 </div>
-              </AnimateIn>
-            </li>
+                <h3 className="mb-3 font-display text-xl text-brand-900">
+                  {pillar.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-brand-600">
+                  {pillar.body}
+                </p>
+              </div>
+            </StaggerChild>
           ))}
-        </ul>
+        </StaggerIn>
       </div>
     </section>
   );

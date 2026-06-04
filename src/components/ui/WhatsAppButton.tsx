@@ -9,7 +9,7 @@ export function WhatsAppButton({ number }: WhatsAppButtonProps) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with Swastik Wellbeing on WhatsApp"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 rounded-full bg-[#075E54] px-4 py-3 text-white shadow-lg transition-colors hover:bg-[#128C7E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#075E54]"
+      className="animate-float fixed bottom-6 right-6 z-50 flex items-center gap-2.5 rounded-full bg-[#075E54] px-4 py-3 text-white shadow-lg shadow-[#075E54]/30 transition-colors hover:bg-[#128C7E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#075E54]"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

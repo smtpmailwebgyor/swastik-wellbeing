@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { AnimateIn } from '@/components/ui/AnimateIn';
+import { AnimateIn, StaggerIn, StaggerChild } from '@/components/ui/AnimateIn';
 import type { Testimonial, ProgramData } from '@/types';
 
 interface TestimonialsSectionProps {
@@ -43,8 +43,12 @@ function getInitials(name: string): string {
 function TestimonialCard({ item }: { item: Testimonial }) {
   return (
     <motion.figure
-      className="relative flex flex-col overflow-hidden rounded-sm border border-white/10 bg-white/[0.07] shadow-lg backdrop-blur-md"
-      whileHover={{ y: -5, borderColor: 'rgba(196,150,58,0.25)', backgroundColor: 'rgba(255,255,255,0.11)' }}
+      className="relative flex h-full flex-col overflow-hidden rounded-sm border border-white/10 bg-white/[0.07] shadow-lg backdrop-blur-md"
+      whileHover={{
+        y: -5,
+        borderColor: 'rgba(196,150,58,0.25)',
+        backgroundColor: 'rgba(255,255,255,0.11)',
+      }}
       transition={{ duration: 0.25, ease: 'easeOut' }}
     >
       {/* Gold left-border accent */}
@@ -53,25 +57,21 @@ function TestimonialCard({ item }: { item: Testimonial }) {
         className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-gold-400 to-gold-600"
       />
 
-      <div className="flex flex-col gap-5 p-8 pl-10">
-        {/* Decorative opening quote */}
+      <div className="flex flex-1 flex-col gap-5 p-8 pl-10">
         <div
           aria-hidden="true"
-          className="font-display text-5xl leading-none text-gold-400/60 select-none"
+          className="select-none font-display text-5xl leading-none text-gold-400/60"
         >
           &ldquo;
         </div>
 
-        {/* Quote */}
         <blockquote className="flex-1">
           <p className="font-display text-lg leading-relaxed text-white/90">
             {item.quote}
           </p>
         </blockquote>
 
-        {/* Author row */}
         <figcaption className="flex items-center gap-4 border-t border-white/10 pt-5">
-          {/* Initials avatar */}
           <div
             aria-hidden="true"
             className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gold-500/25 font-sans text-xs font-semibold uppercase tracking-wider text-gold-300"
@@ -80,8 +80,8 @@ function TestimonialCard({ item }: { item: Testimonial }) {
           </div>
 
           <div className="min-w-0 flex-1">
-            <p className="font-semibold text-white truncate">{item.name}</p>
-            <p className="mt-0.5 text-sm text-brand-300 truncate">{item.role}</p>
+            <p className="truncate font-semibold text-white">{item.name}</p>
+            <p className="mt-0.5 truncate text-sm text-brand-300">{item.role}</p>
           </div>
 
           <div className="shrink-0">
@@ -100,7 +100,6 @@ export function TestimonialsSection({ data }: TestimonialsSectionProps) {
       aria-labelledby="testimonials-heading"
       className="relative overflow-hidden bg-brand-900 py-20 lg:py-28"
     >
-      {/* Decorative background glows */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="absolute right-0 top-1/4 h-80 w-80 rounded-full bg-brand-700/30 blur-3xl" />
         <div className="absolute bottom-0 left-1/4 h-64 w-64 rounded-full bg-gold-500/8 blur-3xl" />
@@ -116,18 +115,16 @@ export function TestimonialsSection({ data }: TestimonialsSectionProps) {
           />
         </AnimateIn>
 
-        <ul
+        <StaggerIn
+          staggerDelay={0.14}
           className="mt-14 grid gap-6 md:grid-cols-3"
-          aria-label="Client testimonials"
         >
-          {data.items.map((item, index) => (
-            <li key={item.id}>
-              <AnimateIn delay={index * 0.12}>
-                <TestimonialCard item={item} />
-              </AnimateIn>
-            </li>
+          {data.items.map((item) => (
+            <StaggerChild key={item.id}>
+              <TestimonialCard item={item} />
+            </StaggerChild>
           ))}
-        </ul>
+        </StaggerIn>
       </div>
     </section>
   );

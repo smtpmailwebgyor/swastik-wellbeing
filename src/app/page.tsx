@@ -8,6 +8,8 @@ import {
   ProgramExperienceSection,
   TestimonialsSection,
   TrustSection,
+  SpacesShowcaseSection,
+  AssociationsSection,
   FaqSection,
   LeadFormSection,
   CtaSection,
@@ -39,6 +41,8 @@ export default function Page() {
         <ProgramExperienceSection data={programData.program} />
         <TestimonialsSection data={programData.testimonials} />
         <TrustSection />
+        <SpacesShowcaseSection />
+        <AssociationsSection />
         <FaqSection data={programData.faqs} />
         <LeadFormSection data={programData.leadForm} />
         <CtaSection data={programData.cta} />
